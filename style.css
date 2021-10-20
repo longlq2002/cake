@@ -1,0 +1,995 @@
+:root {
+    --main-color: #d1aa7b;
+    --header-background: #be7330;
+    --background: #F2D39A;
+    --span: #732F20;
+    --black: #13131a;
+    --red: rgb(218, 32, 32);
+    --yellow: #F3A950;
+    --brown: #BE7330;
+}
+
+/*==================================================================================================================================
+                            RESET STARTS 
+====================================================================================================================================*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none; border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: .2s linear;
+}
+/*=====================================================================================================================================
+                            RESET ENDS 
+=====================================================================================================================================*/
+
+
+
+
+
+/*===================================================================================================================================
+                        HTML STARTS 
+===================================================================================================================================*/
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+    overflow-y: visible;
+    scroll-padding-top: 9rem;
+    scroll-behavior: smooth;
+}
+
+html::-webkit-scrollbar {
+    width: 0rem;
+}
+
+html::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+html::-webkit-slider-thumb {
+    background:#fff;
+    border-radius: 5rem;
+}
+/*===================================================================================================================================
+                        HTML ENDS 
+====================================================================================================================================*/
+
+
+
+
+
+/*====================================================================================================================================
+                        BODY STARTS 
+=====================================================================================================================================*/
+body {
+    background: url(./Image/background.jpg);
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100vh;
+}
+
+section {
+    padding: 2rem 7%;
+}
+/*====================================================================================================================================
+                        BODY ENDS 
+=====================================================================================================================================*/
+
+
+
+
+
+/*==================================================================================================================================
+                            HEADING STARTS   
+===================================================================================================================================*/
+.heading {
+    font-family: 'Fredericka the Great', cursive;
+    text-transform: capitalize;
+    font-size: 7.5rem;
+    color: var(--black);
+    padding: 2rem 0;
+    padding-bottom: 3rem;
+    text-align: center;
+    color: var(--black);
+}
+
+.heading span {
+    font-family: 'Fredericka the Great', cursive;
+    text-transform: capitalize;
+    color: var(--span);
+    padding: 2rem 3rem;
+    background: var(--yellow);
+}
+
+.btn {
+    margin-top: 1rem;
+    display: inline-block;
+    padding: .9rem;
+    font-size: 1.7rem;
+    background: var(--yellow);
+    border: var(--brown) solid 2px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    letter-spacing: .2rem;
+}
+
+/*====================================================================================================================================
+                            HEADING ENDS   
+==================================================================================================================================*/
+
+
+
+
+
+/*=================================================================================================================================
+                            HEADER STARTS   
+====================================================================================================================================*/
+.header {
+    background: var(--header-background);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 7%;
+    border-bottom: var(--black) solid 2px;
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+}
+/*========================  LOGO    =======================*/
+.header .logo img {
+    height: 5.5rem;
+}
+/*========================  NAVBAR    =======================*/
+.header .navbar a {
+    font-weight: bold;
+    margin: 0 1rem;
+    font-family: 'IM Fell French Canon', serif;
+    font-size: 2.1rem;
+    color: var(--black);
+}
+
+.header .navbar a:hover {
+    color: var(--span);
+    border-bottom: var(--span) solid 2px;
+    padding-bottom: .5rem;
+}
+/*========================  ICON   =======================*/
+.header .icon div {
+    color: var(--black);
+    cursor: pointer;
+    font-size: 2.5rem;
+    margin-left: 2rem;
+}
+
+.header .icon div:hover {
+    color: var(--span);
+}
+
+#menu-btn {
+    display: none;
+}
+/*========================  SEARCH FORM    =======================*/
+.header .search-form {
+    position: absolute;
+    top: 115%; right: 7%;
+    background: #fff;
+    width: 40rem;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    transform: scaleY(0);
+    transform-origin: top;
+}
+
+.header .search-form.active {
+    transform: scaleY(1);
+}
+
+.header .search-form input {
+    height: 100%;
+    width: 100%;
+    font-size: 1.6rem;
+    color: var(--black);
+    padding: 1rem;
+    text-transform: none;
+}
+
+.header .search-form label {
+    cursor: pointer;
+    font-style: 2.2rem;
+    margin-right: 1.5rem;
+    color: var(--black);
+}
+
+.header .search-form label:hover {
+    color: var(--main-color);
+}
+/*========================  CART ITEMS   =======================*/
+.header .cart-items-container {
+    position: absolute;
+    top:100%; right: -100%;
+    height: calc(100vh - 16rem);
+    width: 35rem;
+    background: var(--main-color);
+    padding:0 1.5rem;
+}
+
+.header .cart-items-container.active {
+    right: 0;
+}
+
+.header .cart-items-container .cart-item {
+    position: relative;
+    margin: 2rem 0;
+    display: flex;
+    align-items: center;
+    gap:1.5rem;
+}
+
+.header .cart-items-container .cart-item .fa-times{
+    position: absolute;
+    top:1rem; right: 1rem;
+    font-size: 2rem;
+    cursor: pointer;
+    color: var(--black);
+}
+
+.header .cart-items-container .cart-item .fa-times:hover{
+    color: var(--red);
+}
+
+.header .cart-items-container .cart-item img {
+    height: 7rem;
+}
+
+.header .cart-items-container .cart-item .content h3 {
+    font-size: 2rem;
+    color: var(--span);
+    padding-bottom: 2rem;
+}
+
+.header .cart-items-container .cart-item .content .price {
+    font-size: 1.5rem;
+    font-weight: bold; 
+    color: var(--black);
+}
+
+.header .cart-items-container .btn {
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    background: var(--yellow);
+    color: var(--span);
+}
+/*==================================================================================================================================
+                            HEADER ENDS   
+===================================================================================================================================*/
+
+
+
+
+
+/*===================================================================================================================================
+                            HOME STARTS   
+==================================================================================================================================*/
+
+/*========================  GENERAL   ===========================*/
+.home {
+    padding: 0;
+}
+
+/*===================  CONTENT 1 (HOME)   ===================*/
+.home .content-1 {
+    position: absolute;
+    top: 32rem;
+    left: 10rem;
+    max-width: 50rem;
+}
+
+.home .content-1 h3 {
+    font-family: 'Chewy', cursive;
+    font-size: 6rem;
+    text-transform: capitalize;
+    color: #fff;
+}
+
+.home .content-1 h3 span {
+    font-family: 'Chewy', cursive;
+    text-transform: capitalize;
+    color: var(--red);
+    color: #f5578c;
+}
+.home .content-1 p {
+    font-size: 2rem;
+    font-weight: lighter;
+    text-align: justify;
+    line-height: 1.8;
+    padding: 1rem 0;
+    color: #eee;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.home .content-1 a{
+    color: var(--span);
+    padding: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+/*===================  CONTENT 2 (HOME)   ===================*/
+.home .content-2 {
+    position: absolute;
+    top: 25rem;
+    right: 10rem;
+    max-width: 50rem;
+}
+
+.home .content-2 h3 {
+    font-family: 'Chewy', cursive;
+    font-size: 6rem;
+    text-transform: capitalize;
+    color: #fff;
+}
+
+.home .content-2 h3 span {
+    font-family: 'Chewy', cursive;
+    /*position: absolute;*/
+    text-transform: capitalize;
+    color: #f5578c;
+}
+.home .content-2 p {
+    font-size: 2rem;
+    font-weight: lighter;
+    text-align: justify;
+    line-height: 1.8;
+    padding: 1rem 0;
+    color: #eee;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.home .content-2 a{
+    color: var(--span);
+    padding: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+/*===================  CONTENT 3 (HOME)   ===================*/
+.home .content-3 {
+    position: absolute;
+    top: 27rem;
+    right: 10rem;
+    max-width: 50rem;
+}
+
+.home .content-3 h3 {
+    font-family: 'Chewy', cursive;
+    font-size: 6rem;
+    text-transform: capitalize;
+    color: #fff;
+}
+
+.home .content-3 h3 span {
+    font-family: 'Chewy', cursive;
+    text-transform: capitalize;
+    color: var(--red);
+    color: #f5578c;
+}
+.home .content-3 p {
+    font-size: 2rem;
+    font-weight: lighter;
+    text-align: justify;
+    line-height: 1.8;
+    padding: 1rem 0;
+    color: #eee;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.home .content-3 a{
+    color: var(--span);
+    padding: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+/*===================  IMAGE (HOME)   ===================*/
+.slideshow-container .mySlider img {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+}
+
+.slideshow-container {
+    max-width: 100%;
+    position: relative;
+}
+
+.slideshow-container .mySlides {
+    height: 100vh;
+    display: none
+}
+/*===================  ARROW (HOME)   ===================*/
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 52%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+/*===================  DOT (HOME)   ===================*/
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 2rem 0.5rem;
+    background-color: var(--yellow);
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+    background-color: #717171;
+}
+/*===================  FADE (HOME)   ===================*/
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+
+@keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+
+@media only screen and (max-width: 300px) {
+    .prev, .next,.text {font-size: 11px}
+}
+
+/*==================================================================================================================================
+                            HOME ENDS
+==================================================================================================================================*/
+
+
+
+
+
+/*==================================================================================================================================
+                            ABOUT STARTS   
+==================================================================================================================================*/
+
+/*====================  ABOUT ROW (IMG) =======================*/
+.about .row {
+    display: flex;
+    align-items: center;
+    background-color: rgba(96, 93, 121, 0.7); 
+    border-radius: 10%;
+    flex-wrap: wrap;
+}
+
+.about .row .image {
+    flex: 1 1 45rem;
+}
+
+.about .row .image img {
+    width: 100%;
+    border-radius: 10%;
+}
+/*====================  ABOUT ROW (CONT) =======================*/
+.about .row .content {
+    flex: 1 1 40rem;
+    padding: 2rem;
+}
+
+.about .heading span {
+    clip-path: polygon(100% 0, 93% 50%, 100% 99%, 0% 100%, 7% 50%, 0% 0%);
+    padding: 0.3rem 3rem;
+}
+
+.about .row .content h3 {
+    font-size: 4rem;
+    font-family: 'Pacifico', cursive;
+    color: var(--black);
+}
+
+.about .row .content h3 span {
+    color: var(--span);
+    font-family: 'Pacifico', cursive;
+}
+.about .row .content p {
+    font-size: 1.7rem;
+    font-family: 'IM Fell French Canon', serif; 
+    text-align: justify;
+    color: white;
+    padding: 1rem 0;
+    line-height: 1.8;
+    text-transform: none;
+}
+
+.about .content a {
+    color: var(--span);
+    margin-left: 19rem;
+    margin-top: 3rem;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+/*=============================================================================================================================
+                            ABOUT ENDS   
+================================================================================================================================*/
+
+
+
+
+/*=================================================================================================================================
+                            FEATURES STARTS   
+==================================================================================================================================*/
+.features .heading span {
+    clip-path: polygon(100% 0, 93% 50%, 100% 99%, 0% 100%, 7% 50%, 0% 0%);
+    padding:.4rem 3rem;
+}
+
+.features .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap: 1.5rem;
+}
+
+.features .box-container .box {
+    padding: 3rem 2rem;
+    background: var(--background);
+    border: var(--brown) solid 2px;
+    border-radius: 20%;
+    text-align: center;
+}
+
+.features .box-container .box:hover {
+    background: var(--main-color);
+}
+
+.features .box-container .box img {
+    margin: 1rem 0;
+    height: 15rem;
+}
+
+.features .box-container .box h3 {
+    font-family: Pacifico, cursive;
+    font-size: 2.5rem;
+    line-height: 1.8;
+    color: var(--span);
+}
+
+.features .box-container .box p {
+    font-family: 'IM Fell French Canon', serif; 
+    font-weight: bold;
+    font-size: 1.5rem;
+    line-height: 1.8;
+    color: var(--black);
+    padding: 1rem 0;
+}
+
+.features .box-container .box .btn {
+    color: var(--black);
+    font-weight: bold;
+}
+/*============================================================================================================================
+                            FEATURES ENDS   
+===============================================================================================================================*/
+
+
+
+
+
+/*================================================================================================================================
+                            GALLERY STARTS   
+==================================================================================================================================*/
+.gallery .gallery-slider {
+    padding: 1rem;
+}
+
+.gallery .gallery-slider:first-child {
+    margin-bottom: 2rem;
+}
+
+.gallery .heading span {
+    clip-path: polygon(100% 0, 93% 50%, 100% 99%, 0% 100%, 7% 50%, 0% 0%);
+    padding: 0.3rem 4.5rem;
+}
+
+.gallery .gallery-slider .box {
+    background: #F2D39A;
+    border: var(--brown) solid 2px;
+    border-radius: 10%;
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+    transition: .2s linear;
+}
+
+.gallery .gallery-slider .box:hover {
+    background-color: var(--main-color);
+}
+
+.gallery .gallery-slider .box img  {
+    align-items: center;
+    height: 25rem;
+    width: 25rem;
+}
+
+.gallery .gallery-slider .box .icons a {
+    position: relative;
+    bottom: 28rem;
+    height: 4rem;
+    width: 4rem;
+    line-height: 4rem;
+    font-size: 2rem;
+    align-items: center;
+    background-color: var(--yellow);
+    color: var(--brown);
+    border: var(--brown) solid 2px;
+    margin: 1rem;
+}
+
+.gallery .gallery-slider .box .icons a:hover {
+    background-color: var(--main-color);
+    color: var(--span);
+}
+
+.gallery .gallery-slider .box .content h3 {
+    position: relative;
+    bottom: 5rem;
+    line-height: 1.25rem;
+    color: var(--span);
+    font-family: Pacifico, cursive;
+    font-size: 4rem;
+}
+
+
+.gallery .gallery-slider .box .content .stars i {
+    position: relative;
+    bottom: 2rem;
+    color: var(--brown);
+    font-size: 1.5rem;
+}
+
+.gallery .gallery-slider .box .content .price {
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    position: relative;
+    bottom: 2rem;
+    color: var(--black);
+    font-size: 3rem;
+}
+/*====================================================================================================================================
+                            GALLERY ENDS   
+=====================================================================================================================================*/
+
+
+
+
+
+/*====================================================================================================================================
+                            REVIEW STARTS  
+=====================================================================================================================================*/
+.review .review-slider {
+    padding: 1rem;
+}
+
+.review .heading span {
+    clip-path: polygon(100% 0, 93% 50%, 100% 99%, 0% 100%, 7% 50%, 0% 0%);
+    padding: 0.3rem 4rem;
+}
+
+.review .review-slider .box {
+    background: var(--background);
+    border: var(--brown) solid 2px;
+    border-radius: 5rem;
+    text-align: center;
+    padding: 1rem 0.5rem;
+    transition: .2s linear;
+}
+
+.review .review-slider .box:hover {
+    background-color: var(--main-color);
+}
+
+.review .review-slider .box img  {
+    height: 10rem;
+    width: 10rem;
+    border: var(--brown) solid 2px;
+    border-radius: 50%;
+}
+
+.review .review-slider .box p {
+    text-transform: none;
+    padding: 1rem;
+    line-height: 2rem;
+    color: var(--black);
+    font-family: 'IM Fell French Canon', serif; 
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.review .review-slider .box h3 {
+    padding-bottom: .5rem;
+    line-height: 1.8rem;
+    color: var(--black);
+    font-family: Pacifico, cursive;
+    font-size: 2.2rem;
+}
+
+
+.review .review-slider .box .stars i {
+    padding-top: 1rem;
+    color: var(--brown);
+    font-size: 1.5rem;
+}
+/*=====================================================================================================================================
+                            REVIEW ENDS   
+======================================================================================================================================*/
+
+
+
+
+
+/*==================================================================================================================================
+                            BLOGS STARTS  
+====================================================================================================================================*/
+.blogs .heading span {
+    clip-path: polygon(100% 0, 93% 50%, 100% 99%, 0% 100%, 7% 50%, 0% 0%);
+    padding: 0.3rem 2.5rem;
+}
+
+.blogs .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap: 1.5rem;
+}
+
+.blogs .box-container .box {
+    border: var(--brown) solid 2px;
+    border-radius: 5%;
+    background: var(--background) ;
+}
+
+.blogs .box-container .box:hover {
+    background-color: var(--main-color);
+}
+
+.blogs .box-container .box img {
+    width: 100%;
+    height: 25rem;
+    object-fit: cover;
+    border-radius: 5%;
+}
+
+.blogs .box-container .box .content {
+    padding: 2rem;
+}
+
+.blogs .box-container .box .content .icons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 1.5rem;
+    margin-bottom: 1rem;
+    border-bottom: var(--brown) solid 2px;
+}
+
+.blogs .box-container .box .content .icons a {
+    color: var(--brown);
+    font-size: 1.5rem;
+}
+
+.blogs .box-container .box .content .icons a:hover {
+    color: var(--bg);
+}
+
+.blogs .box-container .box .content .icons a i {
+    color: var(--brown);
+    padding-right: .5rem;
+}
+
+.blogs .box-container .box .content h3 {
+    line-height: 1.8;
+    color: var(--span);
+    font-family: "IM Fell French Canon", serif;
+    font-size: 2.2rem;
+    font-weight: bold;
+    padding: .5rem 0;
+}
+
+.blogs .box-container .box .content p {
+    line-height: 1.8;
+    color: var(--black);
+    font-family: "IM Fell French Canon", serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: .5rem 0;
+}
+
+.blogs .box-container .content .btn {
+    align-items: center;
+    background: var(--yellow);
+    border: var(--brown) solid 2px;
+    color: var(--black);
+    font-weight: bold;
+}
+/*====================================================================================================================================
+                            BLOGS ENDS  
+===================================================================================================================================*/
+
+
+
+
+/*==================================================================================================================================
+                            CONTACT STARTS  
+===================================================================================================================================*/
+.contact .heading span {
+    clip-path: polygon(100% 0, 93% 50%, 100% 99%, 0% 100%, 7% 50%, 0% 0%);
+    padding: 0.3rem 2.5rem;
+}
+
+.contact .row {
+    display: flex;
+    background-color: rgba(96, 93, 121, 0.7);
+    flex-wrap: wrap;
+    border-radius: 2%;
+}
+
+.contact .row .map {
+    flex: 1 1 45rem;
+    width: 100%;
+    object-fit: cover;
+}
+
+.contact .row form {
+    flex: 1 1 45rem;
+    padding: 5rem 2rem;
+    text-align: center;
+}
+
+.contact .row form h3 {
+    font-family: 'Fredericka the Great', cursive;
+    font-size: 3.5rem;
+    text-transform: capitalize;
+    color: var(--span);
+}
+
+.contact .row form .btn {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--black);
+}
+
+.contact .row form .inputBox {
+    display: flex;
+    align-items: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    background-color: var(--background);
+    border: var(--border);
+}
+
+.contact .row form .inputBox span {
+    color: var(--brown);
+    font-size: 2rem;
+    padding-left: 2rem;
+}
+
+.contact .row form .inputBox input {
+    width: 100%;
+    padding: 2rem;
+    font-size: 1.7rem;
+    color: var(--brown);
+    text-transform: none;
+    background: none;
+}
+
+.contact .row .btn {
+    align-items: center;
+    background: var(--yellow);
+    border: var(--brown) solid 2px;
+    color: var(--black);
+    font-weight: bold;
+}
+/*================================================================================================================================
+                            CONTACT ENDS
+==================================================================================================================================*/
+
+
+
+
+
+/*=================================================================================================================================
+                            FOOTER STARTS  
+=================================================================================================================================*/
+.footer {
+    background: var(--header-background);
+    border-top: var(--black) solid 2px;
+    text-align: center;
+}
+
+.footer .share {
+    padding: 1rem 0;
+}
+
+.footer .share a {
+    height: 4rem;
+    width: 4rem;
+    line-height: 4rem;
+    font-size: 2rem;
+    color: var(--background);
+    border: white solid  1px;
+    margin: 0.5rem;
+    border-radius: 50%;
+}
+
+.footer .share a:hover {
+    background-color: var(--main-color);
+    color: var(--span);
+}
+
+.footer .links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 1rem 0;
+    gap: 1rem;
+}
+
+.footer .links a {
+    font-size: 1.3rem;
+    font-weight: bold;
+    padding: 1rem 1.5rem;
+    color: var(--background);
+    border: white solid  1px;
+}
+
+.footer .links a:hover {
+    background-color: var(--main-color);
+    color: var(--span);
+}
+
+.footer .credit {
+    font-size: 1.3rem;
+    color: #fff;
+    font-weight: bold;
+    padding: 1rem;
+}
+
+.footer .credit span {
+    color: var(--span);
+    font-weight: bold;
+}
+/*===================================================================================================================================
+                            FOOTER ENDS  
+===================================================================================================================================*/
